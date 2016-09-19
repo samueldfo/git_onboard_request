@@ -27,7 +27,7 @@
     [self.window setRootViewController:navController];
     [self.window makeKeyAndVisible];
     
-    NSLog(@"%@", [Users list:@1]);
+//    NSLog(@"%@", [Users list:@1]);
     
     //se fosse instance method:
     //Users* myList = [[Users alloc] init];

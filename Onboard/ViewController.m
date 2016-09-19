@@ -11,7 +11,6 @@
 #import "ViewController.h"
 #import "Users.h"
 #import "DetailViewController.h"
-#import "User.h"
 
 
 @interface ViewController ()
@@ -21,7 +20,7 @@
 @end
 
 @implementation ViewController {
-    NSArray<User*> *_tableData;
+    NSArray *_tableData;
 }
 
 - (void)viewDidLoad {
@@ -34,7 +33,11 @@
     
     _tableView.bounces = NO;
     
-    _tableData = [Users list:@1];
+    [Users list:@1 callback:^(NSMutableArray*result){
+        _tableData  = result;
+        _tableView.reloadData;
+    } ];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -52,21 +55,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    User *user = [_tableData objectAtIndex:indexPath.row];
+//    User *user = [_tableData objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@", user.userId];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
-    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: user.avatar]]];
-    
+//    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@", user.userId];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
+//    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: user.avatar]]];
+//    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
-//    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[_tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
-//                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
-//                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
-//    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: [[_tableData objectAtIndex: indexPath.row] objectForKey:@"avatar"]]]];
-//
+    cell.textLabel.text = [NSString stringWithFormat:@"ID: %@",[[_tableData objectAtIndex:indexPath.row] objectForKey:@"id"]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"first_name"],
+                                                    [[_tableData objectAtIndex:indexPath.row] objectForKey:@"last_name"]];
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: [[_tableData objectAtIndex: indexPath.row] objectForKey:@"avatar"]]]];
+
     return cell;
 }
 
@@ -75,7 +78,7 @@
     
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
     
-    User *user = [_tableData objectAtIndex:indexPath.row];
+    Users *user = [_tableData objectAtIndex:indexPath.row];
     detailViewController.selectedUser = user;
     
     NSLog(@"%@",user);
@@ -83,13 +86,6 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     
 }
-
-/*
-//altura da célula
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

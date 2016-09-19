@@ -10,7 +10,7 @@
 
 @interface Users : NSObject
 
-+(NSArray*)list:(NSNumber*)page;
++(void)list:(NSNumber*)page callback:(void (^)(NSMutableArray*result))parsingFinished;
 
 -(void)incrementViewCount:(NSNumber*)id;
 

@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) User* selectedUser;
-
-//@property NSDictionary* selectedUser;
+@property NSDictionary* selectedUser;
 
 @end

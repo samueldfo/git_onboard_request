@@ -19,7 +19,6 @@
 		4D1F72BB1D81E88800D6F2DC /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72BA1D81E88800D6F2DC /* Users.m */; };
 		4D1F72CB1D83577F00D6F2DC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72C91D83577F00D6F2DC /* DetailViewController.m */; };
 		4D1F72CC1D83577F00D6F2DC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F72CA1D83577F00D6F2DC /* DetailViewController.xib */; };
-		4D1F72D41D88530700D6F2DC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F72D31D88530700D6F2DC /* User.m */; };
 		FCCCB57D2461C6B59C38434F /* libPods-Onboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E586345B9C491896BB1B78B /* libPods-Onboard.a */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +65,6 @@
 		4D1F72C81D83577F00D6F2DC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4D1F72C91D83577F00D6F2DC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4D1F72CA1D83577F00D6F2DC /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		4D1F72D21D88530700D6F2DC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		4D1F72D31D88530700D6F2DC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		786D785439DDAC903741F6F3 /* Pods-Onboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onboard/Pods-Onboard.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,8 +140,6 @@
 				4D0DA7CC1D81B3480010E167 /* Supporting Files */,
 				4D1F72B91D81E88800D6F2DC /* Users.h */,
 				4D1F72BA1D81E88800D6F2DC /* Users.m */,
-				4D1F72D21D88530700D6F2DC /* User.h */,
-				4D1F72D31D88530700D6F2DC /* User.m */,
 				4D1F72BC1D81EC8500D6F2DC /* DebugMacros.h */,
 			);
 			path = Onboard;
@@ -372,7 +367,6 @@
 			files = (
 				4D1F72CB1D83577F00D6F2DC /* DetailViewController.m in Sources */,
 				4D1F72BB1D81E88800D6F2DC /* Users.m in Sources */,
-				4D1F72D41D88530700D6F2DC /* User.m in Sources */,
 				4D0DA7D11D81B3480010E167 /* AppDelegate.m in Sources */,
 				4D1F72B71D81E68F00D6F2DC /* ViewController.m in Sources */,
 				4D0DA7CE1D81B3480010E167 /* main.m in Sources */,
